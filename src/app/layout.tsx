@@ -19,7 +19,28 @@ export default function RootLayout({
 
   return (
     <html lang="en">
+      <head>
+        <Script
+            id='google-tag-manager'
+            strategy="afterInteractive"
+            dangerouslySetInnerHTML={{
+              __html: `
+              <!-- Google Tag Manager -->
+(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-NX82GHPD');
+<!-- End Google Tag Manager -->
+              `,
+              }}
+          />
+      </head>
       <body className={inter.className}>
+      {/* <!-- Google Tag Manager (noscript) --> */}
+        <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NX82GHPD"
+        height="0" width="0" style={{display:'none', visibility: 'hidden'}}></iframe></noscript>
+        {/* <!-- End Google Tag Manager (noscript) --> */}
         <nav>
           <ul style={{padding: '1rem', listStyle: 'none', display: 'flex', justifyContent: 'end'}}>
             <li style={{paddingRight: '1rem'}}><Link href={'/'}>Home</Link></li>
